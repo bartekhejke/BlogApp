@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#242882</color>
+    <color name="colorPrimaryDark">#242882</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="editTextColor">#1E2275</color>
+    <color name="textHintColor">#8F91BA</color>
+    <color name="loginRegisterButtonColor">#BB3B9B</color>
 </resources>

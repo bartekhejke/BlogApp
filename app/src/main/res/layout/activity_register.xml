@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/main_page_city"/>
+
+    <TextView
+        android:id="@+id/logo2TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:layout_centerHorizontal="true"
+        android:textSize="40dp"
+        android:layout_marginTop="60dp"
+        android:textColor="#FFFFFF"/>
+
+    <TextView
+        android:id="@+id/registerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logoImage"
+        android:text="@string/registerText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp"/>
+
+    <EditText
+        android:id="@+id/registeremailEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="45dp"
+        android:layout_below="@id/registerTextView"
+        android:layout_centerHorizontal="true"
+        android:hint="@string/email_text"
+        android:background="@drawable/edittextbackground"
+        android:layout_marginTop="10dp"
+        android:padding="6dp"
+        android:textColorHint="@color/textHintColor"
+        android:textColor="#FFFFFF"/>
+
+    <EditText
+        android:id="@+id/registerpasswordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="45dp"
+        android:layout_below="@id/registeremailEditText"
+        android:layout_centerHorizontal="true"
+        android:hint="@string/password_text"
+        android:background="@drawable/edittextbackground"
+        android:layout_marginTop="10dp"
+        android:padding="6dp"
+        android:textColorHint="@color/textHintColor"
+        android:textColor="#FFFFFF"/>
+
+    <EditText
+        android:id="@+id/registerpasswordConfirmEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="45dp"
+        android:layout_below="@id/registerpasswordEditText"
+        android:layout_centerHorizontal="true"
+        android:hint="@string/confirm_password_text"
+        android:background="@drawable/edittextbackground"
+        android:layout_marginTop="10dp"
+        android:padding="6dp"
+        android:textColorHint="@color/textHintColor"
+        android:textColor="#FFFFFF"/>
+
+    <Button
+        android:id="@+id/createAccountButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_below="@id/registerpasswordConfirmEditText"
+        android:layout_centerHorizontal="true"
+        android:text="@string/registerCreateAccountText"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/loginregisterbutton"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:textSize="23dp"/>
+
+    <Button
+        android:id="@+id/toLoginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/createAccountButton"
+        android:layout_centerHorizontal="true"
+        android:text="@string/toLoginPageText"
+        android:background="?android:selectableItemBackground"
+        android:textSize="12dp"/>
+
+    <ProgressBar
+        android:id="@+id/registerProgessBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+
+</RelativeLayout>
