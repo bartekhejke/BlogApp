@@ -1,11 +1,14 @@
 package com.bartekhejke.blogapp;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -13,6 +16,8 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     private Toolbar mainToolbar;
+
+    private FloatingActionButton addNewPostButton;
 
     private FirebaseAuth mAuth;
 
@@ -23,9 +28,14 @@ public class MainActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+        addNewPostButton = findViewById(R.id.floatingActionButton);
+
         mainToolbar = findViewById(R.id.mainToolbar);
         setSupportActionBar(mainToolbar);
         getSupportActionBar().setTitle(getResources().getString(R.string.app_name));
+        mainToolbar.setTitleTextColor(ContextCompat.getColor(this,R.color.colorAccent));
+
+        addNewPostButton.setOnClickListener(new ToAddNewPost());
     }
 
     @Override
@@ -77,5 +87,13 @@ public class MainActivity extends AppCompatActivity {
         Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(loginIntent);
         finish();
+    }
+
+    private class ToAddNewPost implements View.OnClickListener {
+        @Override
+        public void onClick(View view) {
+            Intent newPostPageIntent = new Intent(MainActivity.this, PostActivity.class);
+            startActivity(newPostPageIntent);
+        }
     }
 }

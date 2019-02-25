@@ -42,4 +42,11 @@
         android:text="@string/setup_confirm_button"
         android:layout_marginTop="10dp"/>
 
+    <ProgressBar
+        android:id="@+id/setupProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+
 </RelativeLayout>

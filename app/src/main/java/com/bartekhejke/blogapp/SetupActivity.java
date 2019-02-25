@@ -15,6 +15,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 
@@ -43,6 +44,7 @@ public class SetupActivity extends AppCompatActivity {
     private CircleImageView setupImage;
     private EditText setupName;
     private Button setupConfirmButton;
+    private ProgressBar setupProgressBar;
 
     private Uri setupImageUri = null;
 
@@ -59,14 +61,17 @@ public class SetupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setup);
 
-
+        setupProgressBar = (ProgressBar) findViewById(R.id.setupProgressBar);
         setupImage = (CircleImageView) findViewById(R.id.setupImage);
         setupName = (EditText) findViewById(R.id.setupNameEditText);
         setupConfirmButton = (Button) findViewById(R.id.setupSaveButton);
 
+        setupProgressBar.setVisibility(View.INVISIBLE);
+
         setupToolbar = (Toolbar) findViewById(R.id.setupToolbar);
         setSupportActionBar(setupToolbar);
         getSupportActionBar().setTitle("Account settings");
+        setupToolbar.setTitleTextColor(ContextCompat.getColor(this,R.color.colorAccent));
 
         mAuth = FirebaseAuth.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
@@ -134,9 +139,10 @@ public class SetupActivity extends AppCompatActivity {
         public void onClick(View view) {
             final String userName = setupName.getText().toString().trim();
 
-            if (isChanged) {
+            if (!TextUtils.isEmpty(userName) && setupImageUri != null) {
+                setupProgressBar.setVisibility(View.VISIBLE);
 
-                if (!TextUtils.isEmpty(userName) && setupImageUri != null) {
+                if (isChanged) {
                     userId = mAuth.getCurrentUser().getUid();
 
                     StorageReference imagePath = storageReference.child("profile_images").child(userId + ".jpg");
@@ -144,7 +150,7 @@ public class SetupActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
                             if (task.isSuccessful()) {
-
+                                setupProgressBar.setVisibility(View.INVISIBLE);
                                 storeFirestoreUpdate(task, userName);
 
                             } else {
@@ -153,9 +159,9 @@ public class SetupActivity extends AppCompatActivity {
                             }
                         }
                     });
+                } else {
+                    storeFirestoreUpdate(null, userName);
                 }
-            } else {
-                storeFirestoreUpdate(null, userName);
             }
         }
     }
