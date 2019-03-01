@@ -12,4 +12,7 @@ Done: <br />
 • Account settings page. <br />
 
 <img src="https://github.com/bartekhejke/BlogApp/blob/master/description_images/login_page.png" alt="alt text" width="360" height="640">
-<img src="https://github.com/bartekhejke/BlogApp/blob/master/description_images/registration_page.png" alt="alt text" width="360" height="640">
+<img src="https://github.com/bartekhejke/BlogApp/blob/master/description_images/registration_page.png" alt="alt text" width="360" height="640"> <br/>
+
+First version of Post Page view from AdobeXd: <br/>
+<img src="https://github.com/bartekhejke/BlogApp/blob/master/description_images/PostPage.png" alt="alt text" width="360" height="640">
