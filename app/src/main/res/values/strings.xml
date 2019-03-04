@@ -17,4 +17,13 @@
     <string name="toLoginPageText">Do you already have an account? Login Here.</string>
     <string name="setup_account_name">Your name</string>
     <string name="setup_confirm_button">Confirm setup</string>
+    <string name="postDescription">Post description</string>
+    <string name="addPostButton">Add new thinks to blog!</string>
+    <string name="postPage">New Post Page</string>
+    <string name="home_bottom_icon">Home</string>
+    <string name="notification_bottom_icon">Notifications</string>
+    <string name="account_bottom_icon">Account</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

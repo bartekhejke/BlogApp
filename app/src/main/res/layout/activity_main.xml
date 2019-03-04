@@ -13,15 +13,33 @@
         android:background="@color/colorPrimary">
     </android.support.v7.widget.Toolbar>
 
+    <FrameLayout
+        android:id="@+id/mainFragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/mainToolbar"
+        android:layout_above="@+id/bottomNavigation">
+
+    </FrameLayout>
+
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
         android:layout_marginEnd="27dp"
-        android:layout_marginBottom="31dp"
+        android:layout_marginBottom="10dp"
         android:clickable="true"
-        android:src="@mipmap/baseline_add_white_48"/>
+        android:src="@mipmap/baseline_add_white_48"
+        android:layout_above="@+id/bottomNavigation"/>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_menu"
+        android:layout_alignParentBottom="true">
+
+    </android.support.design.widget.BottomNavigationView>
 </RelativeLayout>

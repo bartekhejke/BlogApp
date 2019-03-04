@@ -106,14 +106,14 @@ public class SetupActivity extends AppCompatActivity {
             }
         });
 
-        setupImage.setOnClickListener(new changeSetupImage());
+        setupImage.setOnClickListener(new ChangeSetupImage());
         setupConfirmButton.setOnClickListener(new SaveSetupChanges());
     }
 
-    private class changeSetupImage implements View.OnClickListener {
+    private class ChangeSetupImage implements View.OnClickListener {
         @Override
         public void onClick(View view) {
-            Toast.makeText(SetupActivity.this, "Click Work", Toast.LENGTH_SHORT).show();
+
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
                 if (ContextCompat.checkSelfPermission(SetupActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
                     ActivityCompat.requestPermissions(SetupActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);

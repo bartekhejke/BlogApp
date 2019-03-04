@@ -1,9 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PostActivity">
+    
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/newPostToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+    </android.support.v7.widget.Toolbar>
+    
+    <ImageView
+        android:id="@+id/newPostImage"
+        android:layout_width="match_parent"
+        android:layout_height="256dp"
+        android:layout_below="@+id/newPostToolbar" />
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/newPostDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:layout_below="@id/newPostImage"
+        android:layout_marginTop="10dp"
+        android:hint="@string/postDescription"
+        android:padding="15dp"/>
+
+    <Button
+        android:id="@+id/addPostButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/addPostButton"
+        android:textAllCaps="false"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"/>
+
+    <ProgressBar
+        android:id="@+id/newPostProgressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:progress="50"/>
+
+
+</RelativeLayout>
