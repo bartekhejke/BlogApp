@@ -93,7 +93,6 @@ public class PostActivity extends AppCompatActivity {
                 CropImage.activity()
                         .setGuidelines(CropImageView.Guidelines.ON)
                         .setMinCropResultSize(512,512)
-                        .setAspectRatio(1,1)
                         .start(PostActivity.this);
             }
         }

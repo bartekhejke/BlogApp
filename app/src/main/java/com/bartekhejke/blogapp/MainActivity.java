@@ -49,22 +49,28 @@ public class MainActivity extends AppCompatActivity {
         addNewPostButton = findViewById(R.id.floatingActionButton);
         mainBottomNavigationView = findViewById(R.id.bottomNavigation);
 
-        homeFragment = new HomeFragment();
-        notificationFragment = new NotificationFragment();
-        accountFragment = new AccountFragment();
-
         mainToolbar = findViewById(R.id.mainToolbar);
         setSupportActionBar(mainToolbar);
         getSupportActionBar().setTitle(getResources().getString(R.string.app_name));
-        mainToolbar.setTitleTextColor(ContextCompat.getColor(this,R.color.colorAccent));
+        mainToolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.colorAccent));
 
-        addNewPostButton.setOnClickListener(new ToAddNewPost());
-        mainBottomNavigationView.setOnNavigationItemSelectedListener(new SetBottomMenuAction());
+        if (mAuth.getCurrentUser() != null ) {
+
+            homeFragment = new HomeFragment();
+            notificationFragment = new NotificationFragment();
+            accountFragment = new AccountFragment();
+
+            replaceFragment(homeFragment);
+
+            addNewPostButton.setOnClickListener(new ToAddNewPost());
+            mainBottomNavigationView.setOnNavigationItemSelectedListener(new SetBottomMenuAction());
+        }
     }
 
     @Override
     protected void onStart() {
         super.onStart();
+
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null){
